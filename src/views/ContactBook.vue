@@ -11,8 +11,8 @@
             <ContactList
                 v-if="filteredContactsCount > 0"
                 :contacts="filteredContacts"
-               
-            />
+                 v-model:activeIndex="activeIndex"
+                />
             <p v-else>Không có liên hệ nào.</p>
 
             <div class="mt-3 row justify-content-around align-items-center">
@@ -66,7 +66,8 @@ export default {
         InputSearch,
         ContactList,
     },
-    data() {
+
+     data() {
         return {
             contacts: [],
             activeIndex: -1,
@@ -142,7 +143,7 @@ export default {
 
 <style scoped>
 .page {
-    text-align: left;
+     text-align: left; 
     max-width: 750px;
 }
 </style>
