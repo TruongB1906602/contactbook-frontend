@@ -19,10 +19,16 @@
                 <button class="btn btn-sm btn-primary" @click="refreshList()">
                     <i class="fas fa-redo"></i> Làm mới
                 </button>
-
-                <button class="btn btn-sm btn-success" @click="goToAddContact">
+                
+                
+                 
+                  <button class="btn btn-sm btn-success" @click="goToAddContact">
                     <i class="fas fa-plus"></i> Thêm mới
-                </button>
+                  </button>  
+                 
+              
+               
+               
 
                 <button
                     class="btn btn-sm btn-danger"
@@ -49,6 +55,7 @@
                         <i class="fas fa-edit"></i> Hiệu chỉnh</span
                     >
                 </router-link>
+               
             </div>
         </div>
     </div>
@@ -65,6 +72,7 @@ export default {
         ContactCard,
         InputSearch,
         ContactList,
+         
     },
 
      data() {
@@ -130,12 +138,12 @@ export default {
         },
 
         goToAddContact() {
-            this.$router.push({ name: "contact.add" });
+            this.$router.push({ name:"contact.add" });
         },
     },
-    mounted() {
-        this.refreshList();
-    },
+        mounted() {
+            this.refreshList();
+        },
 };
     // Đoạn mã xử lý đầy đủ sẽ trình bày bên dưới
 
