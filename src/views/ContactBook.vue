@@ -153,5 +153,6 @@ export default {
 .page {
      text-align: left; 
     max-width: 750px;
+    margin: 0 auto;
 }
 </style>

@@ -3,8 +3,7 @@
         <h4>Thêm Liên Hệ</h4>
         <ContactForm
             :contact="contact"
-            @submit:contact="updateContact"
-            @delete:contact="deleteContact"
+            @submit:contact="create"
         />
         <p>{{ message }}</p>
     </div>
@@ -17,7 +16,7 @@ import { object } from 'yup/lib/locale';
 
 export default {
     components: {
-        ContactForm,
+    ContactForm,
     },
     props: {
         id: { type: String, required: true },
@@ -26,22 +25,24 @@ export default {
         return {
             contact: {
                 type:object,
-                required:true
+                required: true
             },
             message: "",
         };
     },
     methods: {
-         async createContact (data){
-            try{
-                await ContactService.create(data);
-                this.$router.push({name:"contactbook"});
-
-            }catch(error){
+      async create(data) {
+            try {
+                await ContactService.create( data);
+                this.message = "Liên hệ được lưu thành công.";
+            } catch (error) {
                 console.log(error);
-            };
-        }
-
+            }
+        },
+    
+    
     },
+    
+    
 };
 </script>
